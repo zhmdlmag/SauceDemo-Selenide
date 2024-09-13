@@ -18,7 +18,8 @@ public class AuthTest extends BaseConfig {
         new Router()
                 .authPage.insertUsername(username)
                 .authPage.insertPassword(password)
-                .authPage.clickLogin();
+                .authPage.clickLogin()
+                .productsPage.checkProductsPageIsOpen();
     }
 
 }
