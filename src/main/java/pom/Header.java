@@ -22,8 +22,8 @@ public class Header {
         return new Router();
     }
 
-    public Router checkCartItemsCount(String itemsCount) {
-        ITEMS_COUNT.shouldHave(exactText(itemsCount));
+    public Router checkCartItemsCount(int itemsCount) {
+        ITEMS_COUNT.shouldHave(exactText(Integer.toString(itemsCount)));
         return new Router();
     }
 

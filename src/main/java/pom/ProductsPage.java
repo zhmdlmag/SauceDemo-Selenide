@@ -24,4 +24,11 @@ public class ProductsPage {
         return new Router();
     }
 
+    public Router addAllItemsToCart() {
+        for (SelenideElement item : ADD_TO_CART_BUTTON) {
+            item.click();
+        }
+        return new Router();
+    }
+
 }

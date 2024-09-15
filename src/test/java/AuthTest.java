@@ -19,7 +19,10 @@ public class AuthTest extends BaseConfig {
                 .authPage.insertUsername(username)
                 .authPage.insertPassword(password)
                 .authPage.clickLogin()
-                .productsPage.checkProductsPageIsOpen();
+                .productsPage.checkProductsPageIsOpen()
+                .productsPage.addAllItemsToCart()
+                .header.checkCartItemsCount(6)
+                .header.clickOnCart();
     }
 
 }
