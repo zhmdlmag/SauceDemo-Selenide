@@ -12,6 +12,7 @@ public class AuthTest extends BaseConfig {
 
         String username = "standard_user";
         String password = "secret_sauce";
+        String value = "user";
 
         open(Configuration.baseUrl);
 
@@ -19,10 +20,27 @@ public class AuthTest extends BaseConfig {
                 .authPage.insertUsername(username)
                 .authPage.insertPassword(password)
                 .authPage.clickLogin()
+
                 .productsPage.checkProductsPageIsOpen()
                 .productsPage.addAllItemsToCart()
+
                 .header.checkCartItemsCount(6)
-                .header.clickOnCart();
+                .header.clickOnCart()
+
+                .cartPage.checkItemCount(6)
+                .cartPage.removeItem(0)
+                .cartPage.clickCheckout()
+
+                .checkoutPage.insertFirstName(value)
+                .checkoutPage.insertLastName(value)
+                .checkoutPage.insertPostalCode(value)
+                .checkoutPage.clickContinueButton()
+
+                .overviewPage.clickFinishButton()
+                .overviewPage.checkOrderIsComplete()
+                .overviewPage.clickBackHomeButton()
+
+                .productsPage.checkProductsPageIsOpen();
     }
 
 }
