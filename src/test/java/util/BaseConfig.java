@@ -11,6 +11,6 @@ abstract public class BaseConfig {
         Configuration.baseUrl = "https://www.saucedemo.com/";
         Configuration.timeout = 7000;
         Configuration.browserSize = "1920x1080";
-        Configuration.headless = false;
+        Configuration.headless = true;
     }
 }
